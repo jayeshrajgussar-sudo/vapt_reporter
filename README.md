@@ -155,10 +155,3 @@ Pull requests and feedback are welcome! Let's make VAPT reporting seamless.
 
 **Jayesh Raj Gussar**
 Cybersecurity & Python Automation Enthusiast
-
-```
-
----
-
-Let me know if you'd like a `LICENSE`, `requirements.txt`, or `.gitignore` file to go along with this. I can generate those too.
-```
