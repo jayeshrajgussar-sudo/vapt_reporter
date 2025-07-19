@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-gray-900 text-white">
+<head>
+  <meta charset="UTF-8" />
+  <title>Front Page Form</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen flex">
+
+  <!-- Sidebar -->
+  <div class="w-64 bg-gray-800 p-6 h-screen shadow-lg flex flex-col space-y-4">
+    <h2 class="text-xl font-bold text-teal-300 mb-6">🧭 Menu</h2>
+    <a href="/" class="block bg-teal-600 hover:bg-teal-700 text-white font-semibold py-2 px-4 rounded text-center">
+      📊 Report Gen
+    </a>
+    <a href="/front-page" class="block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded text-center">
+      📝 Template Gen
+    </a>
+  </div>
+
+  <!-- Main Form Content -->
+  <main class="flex-1 p-10">
+    <div class="w-full max-w-4xl bg-gray-800 p-6 rounded-lg shadow-lg">
+      <h1 class="text-2xl font-bold text-teal-300 mb-6 text-center">📋 Front Page Report Form</h1>
+
+      <!-- ✅ FORM STARTS HERE -->
+      <form action="/front-page" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+        <!-- Output folder input moved inside form -->
+        <div class="md:col-span-2">
+          <label class="block text-sm font-medium mb-1">Output Folder Name:</label>
+          <input type="text" name="custom_folder" class="w-full p-2 bg-gray-700 border border-gray-600 rounded text-white" required>
+        </div>
+
+        <!-- Rest of the fields... -->
+        <div><label class="block text-sm font-medium mb-1">Service Name:</label><input type="text" name="service_name" class="w-full p-2 bg-gray-700 border border-gray-600 rounded text-white" required></div>
+        <div><label class="block text-sm font-medium mb-1">Client:</label><input type="text" name="client" class="w-full p-2 bg-gray-700 border border-gray-600 rounded text-white" required></div>
+        <div><label class="block text-sm font-medium mb-1">Service Provider:</label><input type="text" name="service_provider" class="w-full p-2 bg-gray-700 border border-gray-600 rounded text-white" required></div>
+        <div><label class="block text-sm font-medium mb-1">Report Release Date:</label><input type="text" name="report_release_date" class="w-full p-2 bg-gray-700 border border-gray-600 rounded text-white" required></div>
+        <div><label class="block text-sm font-medium mb-1">Type of Audit:</label><input type="text" name="type_of_audit" class="w-full p-2 bg-gray-700 border border-gray-600 rounded text-white" required></div>
+        <div><label class="block text-sm font-medium mb-1">Type of Audit Report:</label><input type="text" name="type_of_audit_report" class="w-full p-2 bg-gray-700 border border-gray-600 rounded text-white" required></div>
+        <div><label class="block text-sm font-medium mb-1">Period:</label><input type="text" name="period" class="w-full p-2 bg-gray-700 border border-gray-600 rounded text-white" required></div>
+        <div><label class="block text-sm font-medium mb-1">Document Title:</label><input type="text" name="document_title" class="w-full p-2 bg-gray-700 border border-gray-600 rounded text-white" required></div>
+        <div><label class="block text-sm font-medium mb-1">Document ID:</label><input type="text" name="document_id" class="w-full p-2 bg-gray-700 border border-gray-600 rounded text-white" required></div>
+        <div><label class="block text-sm font-medium mb-1">Prepared By:</label><input type="text" name="prepared_by" class="w-full p-2 bg-gray-700 border border-gray-600 rounded text-white" required></div>
+        <div><label class="block text-sm font-medium mb-1">Reviewed By:</label><input type="text" name="reviewed_by" class="w-full p-2 bg-gray-700 border border-gray-600 rounded text-white" required></div>
+        <div><label class="block text-sm font-medium mb-1">Approved By:</label><input type="text" name="approved_by" class="w-full p-2 bg-gray-700 border border-gray-600 rounded text-white" required></div>
+        <div><label class="block text-sm font-medium mb-1">Released By:</label><input type="text" name="released_by" class="w-full p-2 bg-gray-700 border border-gray-600 rounded text-white" required></div>
+        <div><label class="block text-sm font-medium mb-1">Release Date:</label><input type="text" name="release_date" class="w-full p-2 bg-gray-700 border border-gray-600 rounded text-white" required></div>
+        <div><label class="block text-sm font-medium mb-1">Number of Locations:</label><input type="text" name="number_of_locations" class="w-full p-2 bg-gray-700 border border-gray-600 rounded text-white" required></div>
+        <div><label class="block text-sm font-medium mb-1">Parent Client Name:</label><input type="text" name="parent_client_name" class="w-full p-2 bg-gray-700 border border-gray-600 rounded text-white" required></div>
+        <div><label class="block text-sm font-medium mb-1">Asset / Range Location:</label><input type="text" name="asset/range_location" class="w-full p-2 bg-gray-700 border border-gray-600 rounded text-white" required></div>
+        <div><label class="block text-sm font-medium mb-1">Pre-audit Preparation:</label><input type="text" name="pre_audit_prep" class="w-full p-2 bg-gray-700 border border-gray-600 rounded text-white" required></div>
+        <div><label class="block text-sm font-medium mb-1">Activities Dates:</label><input type="text" name="activities_dates" class="w-full p-2 bg-gray-700 border border-gray-600 rounded text-white" required></div>
+        <div><label class="block text-sm font-medium mb-1">First Level Report:</label><input type="text" name="first_level_report" class="w-full p-2 bg-gray-700 border border-gray-600 rounded text-white" required></div>
+        <div><label class="block text-sm font-medium mb-1">Second Level Report:</label><input type="text" name="second_level_report" class="w-full p-2 bg-gray-700 border border-gray-600 rounded text-white" required></div>
+        <div class="md:col-span-2"><label class="block text-sm font-medium mb-1">Client Location:</label><input type="text" name="client_location" class="w-full p-2 bg-gray-700 border border-gray-600 rounded text-white" required></div>
+
+        <!-- Submit button -->
+        <div class="md:col-span-2">
+          <button type="submit" class="w-full bg-teal-500 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded mt-4">
+            🚀 Generate Report
+          </button>
+        </div>
+      </form>
+      <!-- ✅ FORM ENDS HERE -->
+    </div>
+  </main>
+</body>
+</html>

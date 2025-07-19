@@ -1,0 +1,7 @@
+pandas
+openpyxl
+python-pptx
+rich
+questionary
+pyyaml
+yaspin

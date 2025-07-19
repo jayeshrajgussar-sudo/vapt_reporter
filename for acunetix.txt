@@ -1,0 +1,8 @@
+target = ip 
+Name = NVT Name
+Imapct = Vulnerability Insight
+Description = Summary
+Recommendation = Solution
+CVEList = CVEs
+Port new column
+Port Protocol new column 

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-gray-900 text-white">
+<head>
+  <meta charset="UTF-8">
+  <title>Reporting Framework GUI </title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen flex">
+
+  <!-- Sidebar -->
+  <div class="w-64 bg-gray-800 p-6 h-screen shadow-lg flex flex-col space-y-4">
+    <h2 class="text-xl font-bold text-teal-300 mb-6">🧭 Menu</h2>
+    <a href="/" class="block bg-teal-600 hover:bg-teal-700 text-white font-semibold py-2 px-4 rounded text-center">
+      📊 Report Gen
+    </a>
+    <a href="/front-page" class="block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded text-center">
+      📝 Template Gen
+    </a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="flex-1 p-8">
+    <div class="max-w-3xl mx-auto bg-gray-800 p-6 rounded-lg shadow-lg">
+      <h1 class="text-2xl font-bold mb-6 text-center text-teal-300">📊 Reporting Framework V1.0</h1>
+
+      <!-- Flash messages -->
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          <div class="mb-4 space-y-2">
+            {% for category, message in messages %}
+              <div class="p-3 rounded text-sm font-medium 
+                  {% if category == 'success' %}bg-green-600
+                  {% elif category == 'danger' %}bg-red-600
+                  {% else %}bg-gray-600{% endif %}">
+                {{ message }}
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endwith %}
+
+      <!-- Report Generation Form -->
+      <form action="/" method="POST" enctype="multipart/form-data" class="space-y-4">
+        <!-- Report Selection -->
+        <label class="block text-sm font-medium">Select Report:</label>
+        <select name="report_type" class="w-full p-2 bg-gray-700 border border-gray-600 rounded text-white" required>
+          <option value="">-- Select --</option>
+          <option value="Detailed NVT Report (Phase 1)">Detailed NVT Report (Phase 1)</option>
+          <option value="Executive Report (Phase 1)">Executive Report (Phase 1)</option>
+          <option value="Executive Report (Phase 2)">Executive Report (Phase 2)</option>
+        </select>
+
+        <!-- Output Folder -->
+        <label class="block text-sm font-medium">Output Folder Name:</label>
+        <input type="text" name="custom_folder" placeholder="e.g., client_xyz" class="w-full p-2 bg-gray-700 border border-gray-600 rounded text-white" required>
+
+        <!-- File Uploads -->
+        <label class="block text-sm font-medium">Upload Input Files (if needed):</label>
+        <div class="grid grid-cols-1 gap-4">
+          <div>
+            <label class="block text-xs text-gray-300 mb-1">First Sheet</label>
+            <input type="file" name="sheet1" class="w-full text-white bg-gray-700 border border-gray-600 rounded p-2">
+          </div>
+          <div>
+            <label class="block text-xs text-gray-300 mb-1">Second Sheet</label>
+            <input type="file" name="sheet2" class="w-full text-white bg-gray-700 border border-gray-600 rounded p-2">
+          </div>
+        </div>
+
+        <button type="submit" class="w-full bg-teal-500 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded">
+          🚀 Run Report
+        </button>
+      </form>
+
+      {% if output_dir %}
+        <div class="mt-6 text-sm text-green-400">
+          ✅ Output saved to: <code>{{ output_dir }}</code>
+          <br><br>
+          <a href="/download/{{ output_dir }}" class="text-blue-400 underline">Download Files</a>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</body>
+</html>
